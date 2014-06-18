@@ -1,0 +1,24 @@
+<div class="row">
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Name:</strong>
+	  <%= @user.name %>
+	</p>
+
+	<p>
+	  <strong>Email:</strong>
+	  <%= @user.email %>
+	</p>
+
+	<hr>
+
+	<% @user.microposts.each do |post| %>
+		<div class="panel">
+			<p class="subheader"><%= post.content %></p>
+		</div>
+	<% end %>
+
+	<%= link_to 'Edit', edit_user_path(@user) %> |
+	<%= link_to 'Back', users_path %>
+</div>
